@@ -2,10 +2,11 @@
 var express = require('express'),
     app     = express();
 var os = require('os');
-
-
+var morgan = require('morgan')
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
+
+app.use(morgan('combined'))
 
 app.get('/', function (req, res) {
     res.send('please invoke with a path of /Curam or /CuramStatic is needed');
