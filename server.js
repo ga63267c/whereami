@@ -37,7 +37,7 @@ app.get('/hostname', function (req, res) {
 });
 
 // repsond with the hostname (in OCP this will be the container name)
-app.get('pathbased/hostname', function (req, res) {
+app.get('/pathbased/hostname', function (req, res) {
     res.send('Pathbased result {serverName:'+os.hostname()+';}');
 });
 
