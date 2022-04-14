@@ -36,6 +36,11 @@ app.get('/hostname', function (req, res) {
     res.send('{serverName:'+os.hostname()+';}');
 });
 
+// repsond with the hostname (in OCP this will be the container name)
+app.get('pathbased/hostname', function (req, res) {
+    res.send('Pathbased result {serverName:'+os.hostname()+';}');
+});
+
 app.listen(port, ip);
 console.log('Server running on http://%s:%s', ip, port);
 
